@@ -1,0 +1,392 @@
+@import url(font.scss);
+
+$white: #f2e1c2;
+$dark: #262526;
+$red: #f23207;
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero {
+  height: 100svh;
+  background-image: url(/assets/img/Backround.jpg);
+  background-position-x: 100%;
+  background-size: cover;
+  animation: slideBackground 1.5s linear;
+
+  @keyframes slideBackground {
+    from {
+      background-position-x: 0%;
+    }
+    to {
+      background-position-x: 100%;
+    }
+  }
+
+  .shoom {
+    position: absolute;
+    display: block;
+    height: 100%;
+    top: 0;
+    width: 200vw;
+    left: 0;
+    object-fit: cover;
+    object-position: 100%;
+    opacity: 0;
+    transition: object-position 2s ease-in-out;
+    animation: animateObjectPosition 5s ease-in-out forwards, fadeOpacity 5s ease-in-out forwards;
+
+    @keyframes animateObjectPosition {
+      from {
+        object-position: 0%;
+      }
+      to {
+        object-position: 100%;
+      }
+    }
+
+    @keyframes fadeOpacity {
+      0% {
+        opacity: 0;
+      }
+
+      25% {
+        opacity: 0.5;
+      }
+
+      50% {
+        opacity: 1;
+      }
+      72% {
+        opacity: 0.5;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.button {
+  color: $dark;
+  padding: 10px 15px;
+  background-color: $white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: "Montserrat";
+  word-wrap: break-word;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: $red;
+    color: $white;
+  }
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+  position: relative;
+  z-index: 1;
+
+  &-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+
+    nav ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+
+      a {
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: 500;
+        font-family: "Montserrat";
+        color: $white;
+        transition: color 0.2s ease-in-out;
+
+        &:hover {
+          color: $red;
+        }
+      }
+    }
+  }
+}
+
+.utp {
+  display: flex;
+  padding-top: 120px;
+  position: relative;
+  z-index: 1;
+
+  &__inner {
+    display: flex;
+    width: 100%;
+  }
+
+  &__line {
+    background-color: #d9d9d9;
+    width: 2px;
+    height: 0;
+    max-height: 600px;
+    position: relative;
+    animation: fadeInHeight 1.5s linear forwards;
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: #d9d9d9;
+      border-radius: 100%;
+      right: -2px;
+    }
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: #d9d9d9;
+      border-radius: 100%;
+      top: 100%;
+      right: -4px;
+    }
+
+    @keyframes fadeInHeight {
+      from {
+        height: 0;
+      }
+      to {
+        height: 100%;
+      }
+    }
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    padding-top: 13px;
+
+    &-text {
+      color: $red;
+      font-size: 36px;
+      padding-left: 26px;
+      font-weight: 500;
+      text-transform: uppercase;
+      font-family: "Montserrat";
+      letter-spacing: 0.9px;
+      opacity: 0;
+      animation: fadeInOpacity 1s ease-in-out forwards;
+    }
+
+    &-mars {
+      background-image: url(/assets/video/Mars.gif);
+      background-size: cover;
+      font-size: 700px;
+      color: $white;
+      font-family: "Bebas Neue";
+      margin-top: 11px;
+      letter-spacing: -2px;
+      color: transparent;
+      background-clip: text;
+      opacity: 0;
+      animation: fadeInOpacity 1s ease-in-out forwards;
+      animation-delay: 1.7s;
+    }
+  }
+
+  @keyframes fadeInOpacity {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  z-index: 10;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100svh;
+  background-color: $white;
+  transition: all 0.3s linear;
+
+  &.opened {
+    top: 0;
+  }
+  &__inner {
+    margin-top: 100px;
+    position: relative;
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  &__title {
+    font-size: 114px;
+    font-family: "Bebas Neue";
+    text-transform: uppercase;
+    letter-spacing: 2.85px;
+    margin-bottom: 80px;
+    color: $dark;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    .inputs {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 60px;
+      gap: 20px;
+      align-items: center;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        flex: 1;
+
+        label {
+          font-size: 16px;
+          font-family: "Montserrat";
+          font-weight: 700;
+        }
+
+        input {
+          width: 100%;
+          background: none;
+          border: none;
+          border-bottom: 2px solid #262526;
+          padding-bottom: 10px;
+          font-size: 16px;
+          font-family: "Montserrat";
+          font-weight: 400;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+
+      & .count {
+        & .count_block {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          border-bottom: 2px solid #262526;
+          padding-bottom: 10px;
+          font-size: 16px;
+          font-family: "Montserrat";
+          font-weight: 400;
+          gap: 1ch;
+
+          & #count {
+            border: none;
+            width: 2ch;
+            padding-bottom: 0px;
+          }
+
+          input[type="number"]::-webkit-outer-spin-button,
+          input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+
+          /* Для Firefox */
+          input[type="number"] {
+            -moz-appearance: textfield;
+            appearance: textfield;
+          }
+        }
+      }
+    }
+    button {
+      background-color: $dark;
+      color: $white;
+      padding: 10px 118px;
+      font-size: 16px;
+      font-family: "Montserrat";
+      font-weight: 600;
+      text-transform: uppercase;
+      word-wrap: break-word;
+      margin-left: auto;
+      border: none;
+    }
+  }
+}
