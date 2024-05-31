@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeButton = document.getElementById("modal__close");
     const openButton = document.getElementById("open_modal");
     const modal = document.getElementById("modal");
+    mobileMenu = document.getElementById("mobile-menu");
+    mobileMenuOpen = document.getElementById("menu__open");
+    mobileMenuClose = document.getElementById("menu__close");
 
     document.querySelectorAll('input[type="date"]').forEach(function (input) {
         input.valueAsDate = new Date();
@@ -23,5 +26,11 @@ document.addEventListener("DOMContentLoaded", function () {
     
     function modalToggle() {
         modal.classList.toggle("opened");
+    }
+
+    mobileMenuOpen.addEventListener("click", menuToggle);
+    mobileMenuClose.addEventListener("click", menuToggle);
+    function menuToggle() {
+        mobileMenu.classList.toggle("opened");
     }
 });
