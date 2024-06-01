@@ -8,17 +8,6 @@
     font-display: swap;
 }
 
-/* import fonts for wp*/
-
-@font-face {
-    font-family: 'Bebas Neue';
-    src: url('/wp-content/themes/TEST_TASK/assets/fonts/BebasNeueCyrillic.woff2') format('woff2'),
-         url('/wp-content/themes/TEST_TASK/assets/fonts/BebasNeueCyrillic.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
 .news_wrapper{
     padding-top: 190px;
 
@@ -98,6 +87,7 @@ html {
 }
 
 .hero {
+  background-image: url(/assets/img/Backround.jpg);
   height: 100svh;
   min-height: 660px;
   background-position-x: 100%;
@@ -293,6 +283,7 @@ html {
   animation: fadeInOpacity 1s ease-in-out forwards;
 }
 .utp__title-mars {
+  background-image: url(/assets/video/Mars.gif);
   background-size: cover;
   font-size: 700px;
   color: #f2e1c2;

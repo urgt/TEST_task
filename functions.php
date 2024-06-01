@@ -3,6 +3,7 @@
 // styles
 function enqueue_custom_styles()
 {
+    wp_enqueue_style('font-style', get_template_directory_uri() . '/dist/css/font-wp.css');
     wp_enqueue_style('main-style', get_template_directory_uri() . '/dist/css/style.css');
 }
 

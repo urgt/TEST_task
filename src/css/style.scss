@@ -1,4 +1,5 @@
 @import url(font.scss);
+
 @import url(news.scss);
 
 $white: #f2e1c2;
@@ -59,6 +60,7 @@ html {
 }
 
 .hero {
+  background-image: url(/assets/img/Backround.jpg);
   height: 100svh;
   min-height: 660px;
   background-position-x: 100%;
@@ -268,6 +270,7 @@ html {
     }
 
     &-mars {
+      background-image: url(/assets/video/Mars.gif);
       background-size: cover;
       font-size: 700px;
       color: $white;
