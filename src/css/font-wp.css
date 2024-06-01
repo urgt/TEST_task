@@ -2,17 +2,6 @@
 
 @font-face {
     font-family: 'Bebas Neue';
-    src: url('/assets/fonts/BebasNeueCyrillic.woff2') format('woff2'),
-        url('/assets/fonts/BebasNeueCyrillic.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-/* import fonts for wp*/
-
-@font-face {
-    font-family: 'Bebas Neue';
     src: url('/wp-content/themes/TEST_TASK/assets/fonts/BebasNeueCyrillic.woff2') format('woff2'),
          url('/wp-content/themes/TEST_TASK/assets/fonts/BebasNeueCyrillic.woff') format('woff');
     font-weight: normal;

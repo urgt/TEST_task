@@ -1,0 +1,24 @@
+.news_wrapper{
+    padding-top: 190px;
+
+    h1{
+        color: #f2e1c2;;
+        text-align: center;
+        margin-bottom: 150px;
+    }
+    main{
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+
+        article{
+            flex-grow: 1;
+            flex-basis: 200px;
+
+            h2 a{
+                color: #f2e1c2;text-decoration: none;
+                font-size: 18px;
+            }
+        }
+    }
+}

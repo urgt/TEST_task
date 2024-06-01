@@ -14,20 +14,34 @@ document.addEventListener("DOMContentLoaded", function () {
   var closeButton = document.getElementById("modal__close");
   var openButton = document.getElementById("open_modal");
   var modal = document.getElementById("modal");
+  var mobileMenu = document.getElementById("mobile-menu");
+  var mobileMenuOpen = document.getElementById("menu__open");
+  var mobileMenuClose = document.getElementById("menu__close");
   document.querySelectorAll('input[type="date"]').forEach(function (input) {
     input.valueAsDate = new Date();
     input.min = today;
   });
-  start.addEventListener("change", function () {
-    if (start.value && start.value > stop.value) {
-      stop.value = start.value;
-      stop.min = start.value;
-    }
-  });
-  openButton.addEventListener("click", modalToggle);
-  closeButton.addEventListener("click", modalToggle);
-  function modalToggle() {
-    modal.classList.toggle("opened");
+  if (start && stop) {
+    start.addEventListener("change", function () {
+      if (start.value && start.value > stop.value) {
+        stop.value = start.value;
+        stop.min = start.value;
+      }
+    });
+  }
+  if (openButton && closeButton && modal) {
+    var modalToggle = function modalToggle() {
+      modal.classList.toggle("opened");
+    };
+    openButton.addEventListener("click", modalToggle);
+    closeButton.addEventListener("click", modalToggle);
+  }
+  if (mobileMenuOpen && mobileMenuClose && mobileMenu) {
+    var menuToggle = function menuToggle() {
+      mobileMenu.classList.toggle("opened");
+    };
+    mobileMenuOpen.addEventListener("click", menuToggle);
+    mobileMenuClose.addEventListener("click", menuToggle);
   }
 });
 
