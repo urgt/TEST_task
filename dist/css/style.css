@@ -129,6 +129,7 @@ html {
   transition: object-position 2s ease-in-out;
   transition: object-position 2s ease-in-out, -o-object-position 2s ease-in-out;
   animation: animateObjectPosition 5s ease-in-out forwards, fadeOpacity 5s ease-in-out forwards;
+  animation: animateObjectPosition 5s ease-in-out forwards, fadeOpacity 5s ease-in-out forwards;
 }
 @keyframes animateObjectPosition {
   from {
@@ -146,11 +147,14 @@ html {
   }
   25% {
     opacity: 0.3;
+    opacity: 0.3;
   }
   50% {
     opacity: 0.5;
+    opacity: 0.5;
   }
   72% {
+    opacity: 0.3;
     opacity: 0.3;
   }
   100% {
